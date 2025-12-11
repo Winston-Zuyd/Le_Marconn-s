@@ -1,0 +1,6 @@
+@API_Le_Marconnés_HostAddress = http://localhost:5013
+
+GET {{API_Le_Marconnés_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
