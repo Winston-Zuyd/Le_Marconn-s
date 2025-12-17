@@ -17,8 +17,9 @@ namespace Le_Marconnés.Models
         public string Eigenaar { get; set; }
         public int Aantal_reserveringen { get; set; }
         public int Aantal_gasten { get; set; }
+        public ICollection<Reservering> Reserveringen { get; set; }
 
-        public Hotel(int hotel_id, int aantal_kamers, int aantal_medewerkers, string eigenaar, int aantal_reserveringen, int aantal_gasten)
+        public Hotel(int hotel_id, int aantal_kamers, int aantal_medewerkers, string eigenaar, int aantal_reserveringen, int aantal_gasten, ICollection<Reservering> reserveringen)
         {
             Hotel_id = hotel_id;
             Aantal_kamers = aantal_kamers;
@@ -26,6 +27,7 @@ namespace Le_Marconnés.Models
             Eigenaar = eigenaar;
             Aantal_reserveringen = aantal_reserveringen;
             Aantal_gasten = aantal_gasten;
+            Reserveringen = reserveringen;
         }
         public Hotel()
         {

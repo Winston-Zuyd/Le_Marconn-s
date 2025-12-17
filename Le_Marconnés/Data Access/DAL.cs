@@ -8,10 +8,36 @@ using System.Threading.Tasks;
 
 namespace Le_Marconnés.Models
 {
+    public interface IDAL
+    {
+        void AddGast(Gast gast);
+        List<Gast> Gasten();
+        Gast GetGastById(int gastId);
+
+        void AddKamer(Kamer kamer);
+        List<Kamer> Kamers();
+        Kamer GetKamerById(int kamerId);
+
+        void AddReservering(Reservering reservering);
+        List<Reservering> Reserveringen();
+        Reservering GetReserveringById(int reserveringId);
+
+        void UpdateKamer(Kamer kamer);
+        List<Hotel> Hotels();
+        Hotel GetHotelById(int hotelId);
+        void UpdateKamer(Hotel hotel);
+    }
+
+
+    /*
+    public interface IDAL
+    {
+        // Define method signatures for data access operations
+    }
     public class DAL
     {
         private readonly string ConnectionString = "Data Source=localhost;Initial Catalog=LeMarconnés_DB;Integrated Security=True;Trust Server Certificate=True";
-
+        
         public List <Hotel> Hotel = new List<Hotel>();
         public List <Kamer> Kamers = new List<Kamer>();
         public List <Reservering> Reserveringen= new List<Reservering>();
@@ -21,7 +47,8 @@ namespace Le_Marconnés.Models
         {
             //FillListFromDb();
             FillListFromCode();
-        }
+        } 
+
         /*
         public List<Gast> Gasten()
         {
@@ -70,5 +97,5 @@ namespace Le_Marconnés.Models
             }
         }
         */
-    }
 }
+
