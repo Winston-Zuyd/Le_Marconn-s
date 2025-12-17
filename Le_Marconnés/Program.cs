@@ -21,9 +21,9 @@ namespace Le_Marconnés
             Reservering reservering = new Reservering
             {
                 Reservering_id = 1,
-                Aankomstdatum = DateTime.Parse("2025-07-01"),
-                Vertrekdatum = DateTime.Parse("2025-07-10"),
-                Kamernummer = 101
+                Incheck_datum = DateTime.Parse("2025-07-01"),
+                Uitcheck_datum = DateTime.Parse("2025-07-10"),
+                Kamer_id = 101
             }; 
 
             /*  

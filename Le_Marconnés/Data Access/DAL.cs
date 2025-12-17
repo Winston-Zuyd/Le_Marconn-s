@@ -28,6 +28,8 @@ namespace Le_Marconnés.Models
                     command.ExecuteNonQuery();
                 }
             }
+        }
+
         public List<Gast> GetGasten()
         {
             var gasten = new List<Gast>();
@@ -55,6 +57,7 @@ namespace Le_Marconnés.Models
             }
             return gasten;
         }
+
         public void AddReservering(Reservering reservering)
         {
             using (SqlConnection connection = new SqlConnection(Connectionstring))
@@ -64,13 +67,14 @@ namespace Le_Marconnés.Models
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@reservering_id", reservering.Reservering_id);
-                    command.Parameters.AddWithValue("@aankomstdatum", reservering.Aankomstdatum);
-                    command.Parameters.AddWithValue("@vertrekdatum", reservering.Vertrekdatum);
+                    command.Parameters.AddWithValue("@aankomstdatum", reservering.Incheck_datum);
+                    command.Parameters.AddWithValue("@vertrekdatum", reservering.Uitcheck_datum);
                     command.Parameters.AddWithValue("@kamer_id", reservering.Kamer_id);
                     command.ExecuteNonQuery();
                 }
             }
         }
+
         public List<Reservering> GetReserveringen()
         {
             var reserveringen = new List<Reservering>();
@@ -87,8 +91,8 @@ namespace Le_Marconnés.Models
                             var reservering = new Reservering
                             {
                                 Reservering_id = reader.GetInt32(0),
-                                Aankomstdatum = reader.GetDateTime(1),
-                                Vertrekdatum = reader.GetDateTime(2),
+                                Incheck_datum = reader.GetDateTime(1),
+                                Uitcheck_datum = reader.GetDateTime(2),
                                 Kamer_id = reader.GetInt32(3)
                             };
                             reserveringen.Add(reservering);
