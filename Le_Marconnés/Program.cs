@@ -7,6 +7,26 @@ namespace Le_Marconnés
         static void Main(string[] args)
         {
             DAL dal = new DAL();
+
+            Gast gast = new Gast
+            {
+                Gast_id = 1,
+                E_mail = "winstondang77@gmail.com",
+                Telefoonnummer = "0685361827",
+                Reservering_id = 1
+            };
+
+            dal.AddGast(gast);
+
+            Reservering reservering = new Reservering
+            {
+                Reservering_id = 1,
+                Aankomstdatum = DateTime.Parse("2025-07-01"),
+                Vertrekdatum = DateTime.Parse("2025-07-10"),
+                Kamernummer = 101
+            }; 
+
+            /*  
             Console.WriteLine("Gast id: ");
             int gast_id = Int32.Parse(Console.ReadLine());
             Console.WriteLine("E-mail: ");
@@ -26,6 +46,7 @@ namespace Le_Marconnés
             {
                 Console.WriteLine($"Gast ID: {gast.Gast_id}, E-mail: {gast.E_mail}, Telefoonnummer: {gast.Telefoonnummer}, Reservering ID: {gast.Reservering_id}");
             }
+            */
         }
     }
 }
