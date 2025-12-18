@@ -14,18 +14,18 @@ namespace Le_Marconnés_API.Controllers
                 _dal = new DAL();
             }
 
-            [HttpGet]
-            public IActionResult GetGasten()
-            {
-                var gasten = _dal.Gasten();
-                return Ok(gasten);
-            }
-
             [HttpPost]
             public IActionResult AddGast([FromBody] Gast gast)
             {
                 _dal.AddGast(gast);
                 return Ok();
+            }
+
+            [HttpGet]
+            public IActionResult GetGasten()
+            {
+                var gasten = _dal.GetGasten();
+                return Ok(gasten);
             }
         }
     }

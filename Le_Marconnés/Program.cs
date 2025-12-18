@@ -26,6 +26,20 @@ namespace Le_Marconnés
                 Kamer_id = 101
             }; 
 
+            dal.AddReservering(reservering);
+
+            var gasten = dal.GetGasten();
+            foreach (var g in gasten)
+            {
+                Console.WriteLine($"Gast ID: {g.Gast_id}, E-mail: {g.E_mail}, Telefoonnummer: {g.Telefoonnummer}, Reservering ID: {g.Reservering_id}");
+            }
+
+            var reserveringen = dal.GetReserveringen();
+            foreach (var r in reserveringen)
+            {
+                Console.WriteLine($"Reservering ID: {r.Reservering_id}, Incheck Datum: {r.Incheck_datum}, Uitcheck Datum: {r.Uitcheck_datum}, Kamer ID: {r.Kamer_id}");
+            }
+
             /*  
             Console.WriteLine("Gast id: ");
             int gast_id = Int32.Parse(Console.ReadLine());

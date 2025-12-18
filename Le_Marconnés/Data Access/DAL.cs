@@ -29,7 +29,6 @@ namespace Le_Marconnés.Models
                 }
             }
         }
-
         public List<Gast> GetGasten()
         {
             var gasten = new List<Gast>();
@@ -57,7 +56,6 @@ namespace Le_Marconnés.Models
             }
             return gasten;
         }
-
         public void AddReservering(Reservering reservering)
         {
             using (SqlConnection connection = new SqlConnection(Connectionstring))
@@ -74,7 +72,6 @@ namespace Le_Marconnés.Models
                 }
             }
         }
-
         public List<Reservering> GetReserveringen()
         {
             var reserveringen = new List<Reservering>();
